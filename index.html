@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Portfolio</title>
+
+    <!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Link your theme -->
+<link rel="stylesheet" href="css/theme.css" />
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- Add in <head> -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          saffron: '#ff9933',
+          white: '#ffffff',
+          green: '#138808',
+          dark: '#1b1b1b',
+          light: '#f4f4f4',
+          muted: '#777777',
+        },
+        fontFamily: {
+          heading: ['Poppins', 'sans-serif'],
+          body: ['Roboto', 'sans-serif'],
+        },
+        borderRadius: {
+          xl: '1rem',
+        },
+      }
+    }
+  }
+</script>
+
+    <style>
+      :root {
+        --primary: #ff9933; /* saffron */
+        --secondary: #000000; /* black/dark */
+        --accent: #ffffff;
+      }
+
+      .text-saffron {
+        color: var(--primary);
+      }
+
+      .border-saffron {
+        border-color: var(--primary);
+      }
+
+      .active-tab {
+        border-bottom: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .tab-content {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+
+</head>
+<body class="bg-white text-gray-900">
+
+<header class="bg-saffron text-white font-bold shadow-md fixed w-full top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/BJP_Logo.svg" alt="BJP" class="h-6 w-6">
+        <span class="text-xl font-heading tracking-wider">AMIT SHAH</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-6 text-white text-sm uppercase tracking-wide">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="./about.html" class="hover:underline">About</a>
+        <a href="./gallery.html" class="hover:underline">Gallery</a>
+        <a href="./press.html" class="hover:underline">Press</a>
+        <a href="./service.html" class="hover:underline">Service</a>
+        <a href="./Constituency.html" class="hover:underline">Constituency</a>
+        <div class="flex items-center space-x-1">
+          <span>EN</span>
+          <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </nav>
+
+      <!-- Right Icons -->
+      <div class="flex items-center space-x-4 md:hidden">
+        <button>
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M15 17h5l-1.405-1.405M20 12h-5M20 7h-5m4.405-1.405L15 7"></path>
+          </svg>
+        </button>
+        <button id="menuToggle" class="focus:outline-none">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden flex-col space-y-4 pb-4 text-white">
+      <a href="#" class="block text-sm">Home</a>
+      <a href="./about.html" class="block text-sm">About</a>
+      <a href="./gallery.html" class="block text-sm">Gallery</a>
+      <a href="./press.html" class="block text-sm">Press</a>
+      <a href="./service.html" class="block text-sm">Service</a>
+      <a href="./Constituency.html" class="block text-sm">Constituency</a>
+      <div class="flex items-center space-x-2">
+        <span>EN</span>
+        <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Hero Section -->
+<section class="relative h-[calc(100vh-0rem)] text-white">
+  <!-- Swiper -->
+  <div class="swiper heroSwiper h-full">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide relative h-full flex items-center justify-start">
+        <img src="./assets/political 10.jpg" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 max-w-4xl px-8 sm:px-16 animate__animated animate__fadeInLeft">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-saffron leading-tight">
+            “KEEN STUDENT<br> OF HISTORY AND<br> CULTURE”
+          </h1>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide relative h-full flex items-center justify-start">
+        <img src="./assets/political 9.jpg" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 max-w-4xl px-8 sm:px-16 animate__animated animate__fadeInLeft">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-saffron leading-tight">
+            “PASSIONATE ABOUT<br>ART AND ARCHITECTURE”
+          </h1>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide relative h-full flex items-center justify-start">
+        <img src="./assets/political 6.webp" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 max-w-4xl px-8 sm:px-16 animate__animated animate__fadeInLeft">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-saffron leading-tight">
+            “EXPLORING ROOTS<br> THROUGH MODERN LENS”
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional Pagination/Navigation -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script>
+  const swiper = new Swiper(".heroSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+  });
+</script>
+
+
+<section id="about" class="bg-light text-dark font-body overflow-hidden py-20">
+  <div class="container mx-auto px-4">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap lg:flex-nowrap items-stretch">
+      <!-- Text Column -->
+      <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-10 lg:mb-0 flex flex-col">
+       <p class="text-sm font-semibold text-muted tracking-widest uppercase mb-2">
+  Public Leadership
+</p>
+
+ <div class="flex flex-wrap items-end justify-between w-full mb-16 border-b border-gray-300 pb-4">
+  <!-- Left: Main Title -->
+  <div class="lg:w-3/4 w-full mb-6 lg:mb-0 relative">
+    <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
+      <span class="text-saffron">|</span> A Leader Committed to Nation Building
+    </h2>
+    <div class="absolute left-0 -bottom-1 w-16 h-1 bg-saffron rounded"></div>
+  </div>
+
+  <!-- Optional Right: Description or Empty for now -->
+  <!-- 
+  <div class="lg:w-1/4 w-full text-muted text-base leading-relaxed">
+    Optional small description here if needed.
+  </div> 
+  -->
+
+
+
+ 
+</div>
+
+        <!-- Tabs -->
+        <div class="flex mb-6 border-b border-gray-300 text-lg font-semibold">
+          <button class="tab-btn text-saffron border-b-2 border-saffron py-2 px-3 focus:outline-none active-tab" data-tab="vision">Vision</button>
+          <button class="tab-btn text-muted py-2 px-3 focus:outline-none" data-tab="values">Values</button>
+          <button class="tab-btn text-muted py-2 px-3 focus:outline-none" data-tab="impact">Impact</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="vision" class="tab-content">
+          <p class="leading-relaxed mb-6 text-base">
+            With a passion for service and a deep connection to the people, our leader has consistently prioritized inclusive development, cultural preservation, and social justice. From grassroots movements to national policy-making, his journey reflects a tireless dedication to building a progressive and united India.
+          </p>
+        </div>
+
+        <div id="values" class="tab-content hidden">
+          <p class="leading-relaxed mb-6 text-base">
+            Guided by honesty, transparency, and dedication, our leader believes in values rooted in democratic ideals and social harmony. These principles guide every decision made in public service.
+          </p>
+        </div>
+
+        <div id="impact" class="tab-content hidden">
+          <p class="leading-relaxed mb-6 text-base">
+            Over the years, his work has led to major educational reforms, grassroots economic development, and landmark legislation focused on equity and inclusion.
+          </p>
+        </div>
+
+        <!-- Highlights -->
+        <div class="flex border-t border-gray-300 py-2">
+          <span class="text-muted">Years in Service</span>
+          <span class="ml-auto font-semibold">25+</span>
+        </div>
+        <div class="flex border-t border-gray-300 py-2">
+          <span class="text-muted">Key Initiatives</span>
+          <span class="ml-auto font-semibold">Education, Women Empowerment</span>
+        </div>
+        <div class="flex border-t border-b border-gray-300 py-2 mb-6">
+          <span class="text-muted">Recognition</span>
+          <span class="ml-auto font-semibold">National Leadership Award</span>
+        </div>
+
+        <!-- Button -->
+        <div class="flex mt-auto">
+          <a href="about.html" class="ml-auto bg-saffron text-white px-6 py-3 rounded-xl font-semibold shadow-soft hover:bg-orange-600 transition">
+            Read Full Biography →
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="lg:w-1/2 w-full">
+        <div class="h-full">
+          <img src="./assets/political 9.jpg" alt="Political Leader" class="w-full h-full object-cover object-center rounded-xl shadow-soft" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Tab Interactivity Script -->
+<script>
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.getAttribute("data-tab");
+
+      // Remove active classes
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("text-saffron", "border-b-2", "border-saffron", "active-tab");
+        btn.classList.add("text-muted");
+      });
+
+      tabContents.forEach((tab) => tab.classList.add("hidden"));
+
+      // Activate current
+      button.classList.add("text-saffron", "border-b-2", "border-saffron", "active-tab");
+      button.classList.remove("text-muted");
+      document.getElementById(targetId).classList.remove("hidden");
+    });
+  });
+</script>
+
+
+ 
+
+<section class="relative py-24 bg-fixed bg-center bg-cover bg-no-repeat" style="background-image: url('./assets/political 9.jpg');">
+  <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-md"></div>
+
+  <div class="relative z-10 text-center max-w-4xl mx-auto">
+    <h2 class="text-4xl font-heading text-saffron mb-12">Key Achievements</h2>
+    
+    <div class="flex flex-wrap justify-center gap-10 text-dark font-body">
+      <div class="w-40 bg-white p-4 rounded-xl shadow-soft border border-saffron hover:scale-105 transition-transform duration-300">
+        <div class="text-5xl font-bold text-saffron">50+</div>
+        <p class="mt-2 text-sm font-medium text-muted">Development Projects</p>
+      </div>
+      
+      <div class="w-40 bg-white p-4 rounded-xl shadow-soft border border-saffron hover:scale-105 transition-transform duration-300">
+        <div class="text-5xl font-bold text-saffron">20+</div>
+        <p class="mt-2 text-sm font-medium text-muted">Awards & Honors</p>
+      </div>
+      
+      <div class="w-40 bg-white p-4 rounded-xl shadow-soft border border-saffron hover:scale-105 transition-transform duration-300">
+        <div class="text-5xl font-bold text-saffron">100K+</div>
+        <p class="mt-2 text-sm font-medium text-muted">Volunteers Joined</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+<!-- Ongoing Campaigns Section (Enhanced) -->
+<section class="text-dark bg-light font-body py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Heading -->
+ <div class="flex flex-wrap items-end justify-between w-full mb-16 border-b border-gray-300 pb-4">
+  <!-- Left: Heading -->
+  <div class="lg:w-1/2 w-full mb-6 lg:mb-0 relative">
+    <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
+      <span class="text-saffron">|</span> Ongoing Campaigns
+    </h2>
+    <div class="absolute left-0 -bottom-1 w-16 h-1 bg-saffron rounded"></div>
+  </div>
+
+  <!-- Right: Paragraph -->
+  <div class="lg:w-1/2 w-full text-muted text-base leading-relaxed">
+    Initiatives that reflect a vision of inclusive development, community upliftment, and national progress. Stay updated with our active movements.
+  </div>
+</div>
+
+
+    <!-- Campaign Cards -->
+    <div class="flex flex-wrap -m-4">
+
+      <!-- Reusable Campaign Card -->
+      <div class="xl:w-1/4 md:w-1/2 p-4 flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="rounded-xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-[1.02] w-full flex flex-col h-full group relative border-2 border-saffron/40 hover:border-4 hover:border-gradient-shine">
+          <div class="relative overflow-hidden rounded-t-xl">
+            <img class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" src="./assets/EMPOWERMENT.jpg" alt="Youth Empowerment">
+          </div>
+          <div class="p-6 ">
+            <h3 class="tracking-wide text-xs text-saffron font-medium uppercase mb-1">Empowerment</h3>
+            <h2 class="text-lg font-heading font-semibold text-dark mb-2">Youth Leadership Program</h2>
+            <p class="text-muted text-sm flex-grow">
+              Grooming young minds to take leadership roles through mentoring, education, and skill-building workshops.
+            </p>
+          </div>
+          <!-- Border shine -->
+          <span class="shine"></span>
+        </div>
+      </div>
+
+      <!-- Duplicate for all other cards with updated content/images -->
+      <div class="xl:w-1/4 md:w-1/2 p-4 flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="rounded-xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-[1.02] w-full flex flex-col h-full group relative border-2 border-saffron/40 hover:border-4 hover:border-gradient-shine">
+          <div class="relative overflow-hidden rounded-t-xl">
+            <img class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" src="./assets/SUSTAINABILITY.jpg" alt="Clean City">
+          </div>
+          <div class="p-6 ">
+            <h3 class="tracking-wide text-xs text-saffron font-medium uppercase mb-1">Sustainability</h3>
+            <h2 class="text-lg font-heading font-semibold text-dark mb-2">Clean City Movement</h2>
+            <p class="text-muted text-sm flex-grow">
+              Community-driven initiative to ensure sanitation, reduce pollution, and raise awareness for a greener tomorrow.
+            </p>
+          </div>
+          <span class="shine"></span>
+        </div>
+      </div>
+
+      <div class="xl:w-1/4 md:w-1/2 p-4 flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="rounded-xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-[1.02] w-full flex flex-col h-full group relative border-2 border-saffron/40 hover:border-4 hover:border-gradient-shine">
+          <div class="relative overflow-hidden rounded-t-xl">
+            <img class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" src="./assets/Healthcare.jpg" alt="Healthcare">
+          </div>
+          <div class="p-6 ">
+            <h3 class="tracking-wide text-xs text-saffron font-medium uppercase mb-1">Health</h3>
+            <h2 class="text-lg font-heading font-semibold text-dark mb-2">Healthcare for All</h2>
+            <p class="text-muted text-sm flex-grow">
+              Mobile medical units and free health checkup camps reaching rural areas and underserved communities.
+            </p>
+          </div>
+          <span class="shine"></span>
+        </div>
+      </div>
+
+      <div class="xl:w-1/4 md:w-1/2 p-4 flex" data-aos="fade-up" data-aos-delay="400">
+        <div class="rounded-xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-[1.02] w-full flex flex-col h-full group relative border-2 border-saffron/40 hover:border-4 hover:border-gradient-shine">
+          <div class="relative overflow-hidden rounded-t-xl">
+            <img class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" src="./assets/Women’s Safety.jpg" alt="Women Safety">
+          </div>
+          <div class="p-6 ">
+            <h3 class="tracking-wide text-xs text-saffron font-medium uppercase mb-1">Inclusivity</h3>
+            <h2 class="text-lg font-heading font-semibold text-dark mb-2">Women’s Safety Drive</h2>
+            <p class="text-muted text-sm flex-grow">
+              Campaigns to ensure women's safety, legal awareness, and self-defense workshops across urban and rural sectors.
+            </p>
+          </div>
+          <span class="shine"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Testimonials Section -->
+<section class="bg-[#f7f7f7] py-20 font-body text-dark" id="testimonials">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Header -->
+<div class="flex items-center justify-between mb-10 border-b border-gray-300 pb-2">
+  <!-- Left: Stylized Heading -->
+  <div class="relative">
+    <h2 class="text-2xl sm:text-3xl font-heading text-dark">
+      <span class="text-saffron">|</span> Testimonials
+    </h2>
+    <div class="absolute left-0 -bottom-1 w-10 h-1 bg-saffron rounded"></div>
+  </div>
+
+  <!-- Right: Link -->
+  <a href="#" class="text-saffron text-sm font-medium underline-offset-2 hover:underline transition-all duration-200">
+    View All
+  </a>
+</div>
+
+
+
+    <!-- Swiper -->
+    <div class="swiper testimonialSwiper px-6">
+      <div class="swiper-wrapper gap-4">
+
+        <!-- Slide -->
+        <div class="swiper-slide flex justify-center">
+          <div
+            data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
+          >
+            <img
+              src="./assets/political 10.jpg"
+              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
+              alt="Venkaiah Naidu"
+            />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Former Vice President, Venkaiah Naidu
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+            <div class="swiper-slide flex justify-center">
+          <div
+            data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
+          >
+            <img
+              src="./assets/political 10.jpg"
+              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
+              alt="Venkaiah Naidu"
+            />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Former Vice President, Venkaiah Naidu
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+            <div class="swiper-slide flex justify-center">
+          <div
+            data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
+          >
+            <img
+              src="./assets/political 10.jpg"
+              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
+              alt="Venkaiah Naidu"
+            />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Former Vice President, Venkaiah Naidu
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+            <div class="swiper-slide flex justify-center">
+          <div
+            data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
+          >
+            <img
+              src="./assets/political 10.jpg"
+              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
+              alt="Venkaiah Naidu"
+            />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Former Vice President, Venkaiah Naidu
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+            <div class="swiper-slide flex justify-center">
+          <div
+            data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
+          >
+            <img
+              src="./assets/political 10.jpg"
+              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
+              alt="Venkaiah Naidu"
+            />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Former Vice President, Venkaiah Naidu
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+            <div class="swiper-slide flex justify-center">
+          <div
+            data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
+          >
+            <img
+              src="./assets/political 10.jpg"
+              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
+              alt="Venkaiah Naidu"
+            />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Former Vice President, Venkaiah Naidu
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+            <div class="swiper-slide flex justify-center">
+          <div
+            data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
+          >
+            <img
+              src="./assets/political 10.jpg"
+              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
+              alt="Venkaiah Naidu"
+            />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Former Vice President, Venkaiah Naidu
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+            <div class="swiper-slide flex justify-center">
+          <div
+            data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
+          >
+            <img
+              src="./assets/political 10.jpg"
+              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
+              alt="Venkaiah Naidu"
+            />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Former Vice President, Venkaiah Naidu
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicate the same block as above for each additional testimonial -->
+        <!-- Just replicate the div starting from .swiper-slide flex justify-center -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Swiper JS -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const testimonialSwiper = new Swiper('.testimonialSwiper', {
+    slidesPerView: 1.2,
+    spaceBetween: 30,
+    breakpoints: {
+      640: { slidesPerView: 1.2 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+</script> -->
+
+
+
+
+<!-- <script>
+  const swiper = new Swiper('.testimonialSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }
+  });
+</script> -->
+
+
+<!-- Call to Action Section for Portfolio Theme -->
+<section id="join" class="py-20 px-6 bg-saffron text-white text-center font-body" data-aos="fade-up">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">Let's Collaborate and Build Something Amazing</h2>
+    <p class="text-lg md:text-xl text-light mb-8">Whether you're looking to create, innovate, or grow—I'm here to turn your vision into reality. Let's make an impact together.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#contact" class="bg-white text-saffron px-6 py-3 rounded-full font-semibold hover:bg-light transition duration-300">Connect with Me</a>
+      <a href="#projects" class="bg-dark text-white px-6 py-3 rounded-full font-semibold hover:bg-muted transition duration-300">View My Work</a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-[#f7f7f7] text-dark font-body">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+      <!-- Section 1 -->
+      <div>
+        <h2 class="text-lg font-semibold text-saffron mb-4">ABOUT</h2>
+        <p class="text-sm leading-6">
+          We are committed to showcasing the journey, vision, and values of Shri Amit Shah Ji through an engaging and informative platform.
+        </p>
+      </div>
+
+      <!-- Section 2 -->
+      <div>
+        <h2 class="text-lg font-semibold text-saffron mb-4">QUICK LINKS</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-saffron transition">Home</a></li>
+          <li><a href="#" class="hover:text-saffron transition">About</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Achievements</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div>
+        <h2 class="text-lg font-semibold text-saffron mb-4">RESOURCES</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-saffron transition">Media</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Speeches</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Blog</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Gallery</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 4 -->
+      <div>
+        <h2 class="text-lg font-semibold text-saffron mb-4">SUBSCRIBE</h2>
+        <form class="flex flex-col space-y-3">
+          <input type="email" placeholder="Your email"
+            class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-saffron" />
+          <button
+            class="bg-saffron text-white py-2 rounded-md hover:bg-opacity-90 transition-all">Subscribe</button>
+        </form>
+        <p class="text-xs mt-4 text-gray-600">Stay informed with the latest updates and speeches.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="bg-saffron text-white text-sm py-4">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
+      <p>&copy; 2025 AmitShahJourney. All rights reserved.</p>
+      <div class="flex space-x-4 mt-2 sm:mt-0">
+        <a href="#" class="hover:opacity-80 transition">
+          <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+            <path
+              d="M22.23 5.924c-.793.352-1.644.59-2.538.698a4.48 4.48 0 001.964-2.475 8.948 8.948 0 01-2.828 1.084 4.466 4.466 0 00-7.603 4.072A12.676 12.676 0 013.149 4.14a4.465 4.465 0 001.38 5.961 4.429 4.429 0 01-2.024-.559v.057a4.464 4.464 0 003.582 4.374 4.48 4.48 0 01-2.02.077 4.465 4.465 0 004.17 3.1 8.97 8.97 0 01-5.56 1.916c-.36 0-.716-.021-1.067-.063a12.657 12.657 0 006.84 2.004c8.207 0 12.698-6.8 12.698-12.697 0-.194-.004-.387-.013-.579a9.077 9.077 0 002.23-2.312z">
+            </path>
+          </svg>
+        </a>
+        <a href="#" class="hover:opacity-80 transition">
+          <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+            <path
+              d="M19.615 3H4.385C3.615 3 3 3.615 3 4.385v15.23C3 20.385 3.615 21 4.385 21h8.19v-6.692H10.08v-2.615h2.495V9.655c0-2.471 1.51-3.815 3.717-3.815 1.06 0 1.972.079 2.237.114v2.59h-1.534c-1.2 0-1.433.571-1.433 1.407v1.845h2.86l-.373 2.615h-2.487V21h4.873c.77 0 1.385-.615 1.385-1.385V4.385C21 3.615 20.385 3 19.615 3z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- AOS animation JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+<!-- Swiper JS + AOS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  const testimonialSwiper = new Swiper('.testimonialSwiper', {
+    slidesPerView: 1.1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 1.2 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+</script>
+</body>
+</html>

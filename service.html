@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Portfolio</title>
+
+    <!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Link your theme -->
+<link rel="stylesheet" href="css/theme.css" />
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- Add in <head> -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          saffron: '#ff9933',
+          white: '#ffffff',
+          green: '#138808',
+          dark: '#1b1b1b',
+          light: '#f4f4f4',
+          muted: '#777777',
+        },
+        fontFamily: {
+          heading: ['Poppins', 'sans-serif'],
+          body: ['Roboto', 'sans-serif'],
+        },
+        borderRadius: {
+          xl: '1rem',
+        },
+      }
+    }
+  }
+</script>
+
+    <style>
+      :root {
+        --primary: #ff9933; /* saffron */
+        --secondary: #000000; /* black/dark */
+        --accent: #ffffff;
+      }
+
+      .text-saffron {
+        color: var(--primary);
+      }
+
+      .border-saffron {
+        border-color: var(--primary);
+      }
+
+      .active-tab {
+        border-bottom: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .tab-content {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+</head>
+<body>
+
+  <header class="bg-saffron text-white font-bold shadow-md fixed w-full top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/BJP_Logo.svg" alt="BJP" class="h-6 w-6">
+        <span class="text-xl font-heading tracking-wider">AMIT SHAH</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-6 text-white text-sm uppercase tracking-wide">
+        <a href="./index.html" class="hover:underline">Home</a>
+        <a href="./about.html" class="hover:underline">About</a>
+        <a href="./gallery.html" class="hover:underline">Gallery</a>
+        <a href="./press.html" class="hover:underline">Press</a>
+        <a href="./service.html" class="hover:underline">Service</a>
+        <a href="./Constituency.html" class="hover:underline">Constituency</a>
+        <div class="flex items-center space-x-1">
+          <span>EN</span>
+          <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </nav>
+
+      <!-- Right Icons -->
+      <div class="flex items-center space-x-4 md:hidden">
+        <button>
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M15 17h5l-1.405-1.405M20 12h-5M20 7h-5m4.405-1.405L15 7"></path>
+          </svg>
+        </button>
+        <button id="menuToggle" class="focus:outline-none">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden flex-col space-y-4 pb-4 text-white">
+      <a href="./index.html" class="block text-sm">Home</a>
+      <a href="./about.html" class="block text-sm">About</a>
+      <a href="./gallery.html" class="block text-sm">Gallery</a>
+      <a href="./press.html" class="block text-sm">Press</a>
+      <a href="./service.html" class="block text-sm">Service</a>
+      <a href="./Constituency.html" class="block text-sm">Constituency</a>
+      <div class="flex items-center space-x-2">
+        <span>EN</span>
+        <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Hero Section -->
+<section class="relative bg-[url('/assets/public1.jpg')] bg-cover bg-center h-[60vh] flex items-center justify-center">
+
+
+  <div class="bg-black/50 w-full h-full absolute top-0 left-0"></div>
+  <h1 class="relative text-white text-4xl md:text-5xl font-bold z-10">Our Services & Initiatives</h1>
+</section>
+
+<!-- Services Section -->
+<section class="bg-white py-16 text-gray-800 font-body">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Heading -->
+    <!-- <h2 class="text-4xl font-bold text-center text-saffron mb-12 uppercase tracking-wider">
+      Our Services & Initiatives
+    </h2> -->
+
+    <!-- Grid Section -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Card 1 -->
+      <div class="group bg-white border border-saffron p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+        <div class="text-saffron text-5xl mb-4">
+          🎓
+        </div>
+        <h3 class="text-xl font-semibold text-black group-hover:text-saffron">Education Support</h3>
+        <p class="text-gray-600 mt-2">Providing learning tools, scholarships, coaching camps & school renovation support.</p>
+        <a href="#" class="inline-block mt-4 text-saffron font-medium hover:underline">Read More →</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group bg-white border border-saffron p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+        <div class="text-saffron text-5xl mb-4">
+          🏥
+        </div>
+        <h3 class="text-xl font-semibold text-black group-hover:text-saffron">Health & Sanitation</h3>
+        <p class="text-gray-600 mt-2">Organizing medical camps, hygiene awareness drives, and sanitation kit distributions.</p>
+        <a href="#" class="inline-block mt-4 text-saffron font-medium hover:underline">Read More →</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group bg-white border border-saffron p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+        <div class="text-saffron text-5xl mb-4">
+          💼
+        </div>
+        <h3 class="text-xl font-semibold text-black group-hover:text-saffron">Employment Drives</h3>
+        <p class="text-gray-600 mt-2">Job fairs, skill development workshops, and local employment facilitation.</p>
+        <a href="#" class="inline-block mt-4 text-saffron font-medium hover:underline">Read More →</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="group bg-white border border-saffron p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+        <div class="text-saffron text-5xl mb-4">
+          👩‍🦰
+        </div>
+        <h3 class="text-xl font-semibold text-black group-hover:text-saffron">Women Empowerment</h3>
+        <p class="text-gray-600 mt-2">Self-help groups, leadership training, and vocational programs for women.</p>
+        <a href="#" class="inline-block mt-4 text-saffron font-medium hover:underline">Read More →</a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="group bg-white border border-saffron p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+        <div class="text-saffron text-5xl mb-4">
+          💻
+        </div>
+        <h3 class="text-xl font-semibold text-black group-hover:text-saffron">Digital India Initiatives</h3>
+        <p class="text-gray-600 mt-2">Promoting digital literacy, e-governance, and access to online services in rural areas.</p>
+        <a href="#" class="inline-block mt-4 text-saffron font-medium hover:underline">Read More →</a>
+      </div>
+
+      <!-- Add more if needed -->
+    </div>
+  </div>
+</section>
+
+
+
+
+  <footer class="bg-[#f7f7f7] text-dark font-body">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+      <!-- Section 1 -->
+      <div>
+        <h2 class="text-lg font-semibold text-saffron mb-4">ABOUT</h2>
+        <p class="text-sm leading-6">
+          We are committed to showcasing the journey, vision, and values of Shri Amit Shah Ji through an engaging and informative platform.
+        </p>
+      </div>
+
+      <!-- Section 2 -->
+      <div>
+        <h2 class="text-lg font-semibold text-saffron mb-4">QUICK LINKS</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-saffron transition">Home</a></li>
+          <li><a href="#" class="hover:text-saffron transition">About</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Achievements</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div>
+        <h2 class="text-lg font-semibold text-saffron mb-4">RESOURCES</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-saffron transition">Media</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Speeches</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Blog</a></li>
+          <li><a href="#" class="hover:text-saffron transition">Gallery</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 4 -->
+      <div>
+        <h2 class="text-lg font-semibold text-saffron mb-4">SUBSCRIBE</h2>
+        <form class="flex flex-col space-y-3">
+          <input type="email" placeholder="Your email"
+            class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-saffron" />
+          <button
+            class="bg-saffron text-white py-2 rounded-md hover:bg-opacity-90 transition-all">Subscribe</button>
+        </form>
+        <p class="text-xs mt-4 text-gray-600">Stay informed with the latest updates and speeches.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="bg-saffron text-white text-sm py-4">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
+      <p>&copy; 2025 AmitShahJourney. All rights reserved.</p>
+      <div class="flex space-x-4 mt-2 sm:mt-0">
+        <a href="#" class="hover:opacity-80 transition">
+          <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+            <path
+              d="M22.23 5.924c-.793.352-1.644.59-2.538.698a4.48 4.48 0 001.964-2.475 8.948 8.948 0 01-2.828 1.084 4.466 4.466 0 00-7.603 4.072A12.676 12.676 0 013.149 4.14a4.465 4.465 0 001.38 5.961 4.429 4.429 0 01-2.024-.559v.057a4.464 4.464 0 003.582 4.374 4.48 4.48 0 01-2.02.077 4.465 4.465 0 004.17 3.1 8.97 8.97 0 01-5.56 1.916c-.36 0-.716-.021-1.067-.063a12.657 12.657 0 006.84 2.004c8.207 0 12.698-6.8 12.698-12.697 0-.194-.004-.387-.013-.579a9.077 9.077 0 002.23-2.312z">
+            </path>
+          </svg>
+        </a>
+        <a href="#" class="hover:opacity-80 transition">
+          <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+            <path
+              d="M19.615 3H4.385C3.615 3 3 3.615 3 4.385v15.23C3 20.385 3.615 21 4.385 21h8.19v-6.692H10.08v-2.615h2.495V9.655c0-2.471 1.51-3.815 3.717-3.815 1.06 0 1.972.079 2.237.114v2.59h-1.534c-1.2 0-1.433.571-1.433 1.407v1.845h2.86l-.373 2.615h-2.487V21h4.873c.77 0 1.385-.615 1.385-1.385V4.385C21 3.615 20.385 3 19.615 3z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>  
+</body>
+</html>

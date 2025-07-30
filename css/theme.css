@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-saffron: #ff9933;
+    --color-white: #ffffff;
+    --color-green: #138808;
+    --color-dark: #1b1b1b;
+    --color-light: #f4f4f4;
+    --color-muted: #777777;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-saffron {
+    background-color: var(--color-saffron);
+  }
+
+  .text-saffron {
+    color: var(--color-saffron);
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  .bg-light {
+    background-color: var(--color-light);
+  }
+
+  .text-dark {
+    color: var(--color-dark);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .rounded-xl {
+    border-radius: 1rem;
+  }
+}
