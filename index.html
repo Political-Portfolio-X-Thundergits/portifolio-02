@@ -90,11 +90,11 @@
       <!-- Logo -->
       <div class="flex items-center space-x-2">
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/BJP_Logo.svg" alt="BJP" class="h-6 w-6">
-        <span class="text-xl font-heading tracking-wider">AMIT SHAH</span>
+        <span class="text-xl font-heading tracking-wider">RAJIV KUMAR SINGH</span>
       </div>
 
       <!-- Desktop Menu -->
-      <nav class="hidden md:flex space-x-6 text-white text-sm uppercase tracking-wide">
+      <nav class="hidden md:flex space-x-6 text-white text-sm uppercase tracking-wide items-center">
         <a href="#" class="hover:underline">Home</a>
         <a href="./about.html" class="hover:underline">About</a>
         <a href="./gallery.html" class="hover:underline">Gallery</a>
@@ -102,25 +102,25 @@
         <a href="./service.html" class="hover:underline">Service</a>
         <a href="./Constituency.html" class="hover:underline">Constituency</a>
         <a href="./join.html" class="hover:underline">Join</a>
-        <div class="flex items-center space-x-1">
-          <span>EN</span>
-          <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-          </svg>
+
+        <!-- Language Dropdown -->
+        <div class="relative">
+          <button id="desktopLangBtn" onclick="toggleDropdown('desktop')" class="flex items-center space-x-1 focus:outline-none">
+            <span id="desktopLang">EN</span>
+            <svg class="w-3 h-3 ml-1" fill="white" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div id="desktopDropdown" class="absolute right-0 mt-2 bg-white text-black rounded shadow hidden z-50">
+            <button id="desktopLangToggle" class="block px-4 py-2 text-sm hover:bg-saffron hover:text-white transition">हिंदी</button>
+          </div>
         </div>
       </nav>
 
-      <!-- Right Icons -->
-      <div class="flex items-center space-x-4 md:hidden">
-        <button>
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path d="M15 17h5l-1.405-1.405M20 12h-5M20 7h-5m4.405-1.405L15 7"></path>
-          </svg>
-        </button>
+      <!-- Mobile Menu Icon -->
+      <div class="md:hidden flex items-center space-x-4">
         <button id="menuToggle" class="focus:outline-none">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -135,16 +135,77 @@
       <a href="./press.html" class="block text-sm">Press</a>
       <a href="./service.html" class="block text-sm">Service</a>
       <a href="./Constituency.html" class="block text-sm">Constituency</a>
-         <a href="./join.html" class="block text-sm">Join</a>
-      <div class="flex items-center space-x-2">
-        <span>EN</span>
-        <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-        </svg>
+      <a href="./join.html" class="block text-sm">Join</a>
+
+      <!-- Mobile Language Switch -->
+      <div class="relative px-2">
+        <button id="mobileLangBtn" onclick="toggleDropdown('mobile')" class="flex items-center space-x-1 focus:outline-none">
+          <span id="mobileLang">EN</span>
+          <svg class="w-3 h-3 ml-1" fill="white" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div id="mobileDropdown" class="absolute right-0 mt-2 bg-white text-black rounded shadow hidden z-50">
+          <button id="mobileLangToggle" class="block px-4 py-2 text-sm hover:bg-saffron hover:text-white transition">हिंदी</button>
+        </div>
       </div>
     </div>
   </div>
 </header>
+
+<!-- Language & Dropdown Scripts -->
+<script>
+  const desktopLangToggle = document.getElementById('desktopLangToggle');
+  const mobileLangToggle = document.getElementById('mobileLangToggle');
+  const desktopLangSpan = document.getElementById('desktopLang');
+  const mobileLangSpan = document.getElementById('mobileLang');
+
+  const currentLang = window.location.pathname.includes('/hi') ? 'hi' : 'en';
+
+  // Update UI text
+  if (currentLang === 'hi') {
+    desktopLangSpan.innerText = 'हिंदी';
+    desktopLangToggle.innerText = 'EN';
+    mobileLangSpan.innerText = 'हिंदी';
+    mobileLangToggle.innerText = 'EN';
+  } else {
+    desktopLangSpan.innerText = 'EN';
+    desktopLangToggle.innerText = 'हिंदी';
+    mobileLangSpan.innerText = 'EN';
+    mobileLangToggle.innerText = 'हिंदी';
+  }
+
+  // Language switch function
+  function switchLang() {
+    const target = currentLang === 'hi' ? '/en/index.html' : '/hi/index.html';
+    window.location.href = target;
+  }
+
+  desktopLangToggle.addEventListener('click', switchLang);
+  mobileLangToggle.addEventListener('click', switchLang);
+
+  // Dropdown toggle logic
+  function toggleDropdown(type) {
+    const dropdown = type === 'desktop' ? document.getElementById('desktopDropdown') : document.getElementById('mobileDropdown');
+    dropdown.classList.toggle('hidden');
+  }
+
+  // Close dropdowns if clicked outside
+  window.addEventListener('click', function (e) {
+    const desktopBtn = document.getElementById('desktopLangBtn');
+    const mobileBtn = document.getElementById('mobileLangBtn');
+    const desktopDropdown = document.getElementById('desktopDropdown');
+    const mobileDropdown = document.getElementById('mobileDropdown');
+
+    if (!desktopBtn.contains(e.target) && !desktopDropdown.contains(e.target)) {
+      desktopDropdown.classList.add('hidden');
+    }
+    if (!mobileBtn.contains(e.target) && !mobileDropdown.contains(e.target)) {
+      mobileDropdown.classList.add('hidden');
+    }
+  });
+</script>
+
 
 
   <!-- Hero Section -->
@@ -210,35 +271,24 @@
 </script>
 
 
+<!-- About Section -->
 <section id="about" class="bg-light text-dark font-body overflow-hidden py-20">
   <div class="container mx-auto px-4">
     <div class="lg:w-4/5 mx-auto flex flex-wrap lg:flex-nowrap items-stretch">
       <!-- Text Column -->
       <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-10 lg:mb-0 flex flex-col">
-       <p class="text-sm font-semibold text-muted tracking-widest uppercase mb-2">
-  Public Leadership
-</p>
+        <p class="text-sm font-semibold text-muted tracking-widest uppercase mb-2">
+          Public Leadership
+        </p>
 
- <div class="flex flex-wrap items-end justify-between w-full mb-16 border-b border-gray-300 pb-4">
-  <!-- Left: Main Title -->
-  <div class="lg:w-3/4 w-full mb-6 lg:mb-0 relative">
-    <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
-      <span class="text-saffron">|</span> A Leader Committed to Nation Building
-    </h2>
-    <div class="absolute left-0 -bottom-1 w-16 h-1 bg-saffron rounded"></div>
-  </div>
-
-  <!-- Optional Right: Description or Empty for now -->
-  <!-- 
-  <div class="lg:w-1/4 w-full text-muted text-base leading-relaxed">
-    Optional small description here if needed.
-  </div> 
-  -->
-
-
-
- 
-</div>
+        <div class="flex flex-wrap items-end justify-between w-full mb-16 border-b border-gray-300 pb-4">
+          <div class="lg:w-3/4 w-full mb-6 lg:mb-0 relative">
+            <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
+              <span class="text-saffron">|</span> Rajiv Kumar Singh: A Visionary for New India
+            </h2>
+            <div class="absolute left-0 -bottom-1 w-16 h-1 bg-saffron rounded"></div>
+          </div>
+        </div>
 
         <!-- Tabs -->
         <div class="flex mb-6 border-b border-gray-300 text-lg font-semibold">
@@ -250,19 +300,19 @@
         <!-- Tab Content -->
         <div id="vision" class="tab-content">
           <p class="leading-relaxed mb-6 text-base">
-            With a passion for service and a deep connection to the people, our leader has consistently prioritized inclusive development, cultural preservation, and social justice. From grassroots movements to national policy-making, his journey reflects a tireless dedication to building a progressive and united India.
+            Rajiv Kumar Singh envisions a progressive Bharat rooted in its rich cultural legacy. His mission is to empower youth, strengthen rural infrastructure, and ensure transparent governance through technology-driven leadership and grassroots engagement.
           </p>
         </div>
 
         <div id="values" class="tab-content hidden">
           <p class="leading-relaxed mb-6 text-base">
-            Guided by honesty, transparency, and dedication, our leader believes in values rooted in democratic ideals and social harmony. These principles guide every decision made in public service.
+            Rajiv ji believes in inclusive growth, nationalism through development, and citizen-centric governance. His values of honesty, dedication, and community-first approach have guided his political journey for over two decades.
           </p>
         </div>
 
         <div id="impact" class="tab-content hidden">
           <p class="leading-relaxed mb-6 text-base">
-            Over the years, his work has led to major educational reforms, grassroots economic development, and landmark legislation focused on equity and inclusion.
+            From initiating model schools in underdeveloped districts to launching clean water and women empowerment programs, Rajiv ji’s initiatives have impacted millions. His leadership stands as a symbol of service and trust.
           </p>
         </div>
 
@@ -273,11 +323,11 @@
         </div>
         <div class="flex border-t border-gray-300 py-2">
           <span class="text-muted">Key Initiatives</span>
-          <span class="ml-auto font-semibold">Education, Women Empowerment</span>
+          <span class="ml-auto font-semibold">Rural Tech, Women Safety, Education</span>
         </div>
         <div class="flex border-t border-b border-gray-300 py-2 mb-6">
           <span class="text-muted">Recognition</span>
-          <span class="ml-auto font-semibold">National Leadership Award</span>
+          <span class="ml-auto font-semibold">Bharat Vikas Puraskar</span>
         </div>
 
         <!-- Button -->
@@ -291,12 +341,13 @@
       <!-- Image Column -->
       <div class="lg:w-1/2 w-full">
         <div class="h-full">
-          <img src="./assets/political 9.jpg" alt="Political Leader" class="w-full h-full object-cover object-center rounded-xl shadow-soft" />
+          <img src="./assets/political 9.jpg" alt="Rajiv Kumar Singh" class="w-full h-full object-cover object-center rounded-xl shadow-soft" />
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -337,20 +388,20 @@
     <div class="flex flex-wrap justify-center gap-10 text-dark font-body">
       <!-- Achievement Card 1 -->
       <div class="w-40 bg-white p-4 rounded-xl shadow-soft border border-saffron hover:scale-105 transition-transform duration-300">
-        <div class="text-5xl font-bold text-saffron">50+</div>
-        <p class="mt-2 text-sm font-medium text-muted">Development Projects</p>
+        <div class="text-5xl font-bold text-saffron">60+</div>
+        <p class="mt-2 text-sm font-medium text-muted">Model Villages Developed</p>
       </div>
 
       <!-- Achievement Card 2 -->
       <div class="w-40 bg-white p-4 rounded-xl shadow-soft border border-saffron hover:scale-105 transition-transform duration-300">
-        <div class="text-5xl font-bold text-saffron">20+</div>
-        <p class="mt-2 text-sm font-medium text-muted">Awards & Honors</p>
+        <div class="text-5xl font-bold text-saffron">30+</div>
+        <p class="mt-2 text-sm font-medium text-muted">Awards & Honours</p>
       </div>
 
       <!-- Achievement Card 3 -->
       <div class="w-40 bg-white p-4 rounded-xl shadow-soft border border-saffron hover:scale-105 transition-transform duration-300">
-        <div class="text-5xl font-bold text-saffron">100K+</div>
-        <p class="mt-2 text-sm font-medium text-muted">Volunteers Joined</p>
+        <div class="text-5xl font-bold text-saffron">1L+</div>
+        <p class="mt-2 text-sm font-medium text-muted">Youth Empowered</p>
       </div>
     </div>
 
@@ -362,6 +413,7 @@
     </div>
   </div>
 </section>
+
 
 
 
@@ -469,211 +521,139 @@
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Header -->
-<div class="flex items-center justify-between mb-10 border-b border-gray-300 pb-2">
-  <!-- Left: Stylized Heading -->
-  <div class="relative">
-    <h2 class="text-2xl sm:text-3xl font-heading text-dark">
-      <span class="text-saffron">|</span> Testimonials
-    </h2>
-    <div class="absolute left-0 -bottom-1 w-10 h-1 bg-saffron rounded"></div>
-  </div>
-
-  <!-- Right: Link -->
-  <a href="#" class="text-saffron text-sm font-medium underline-offset-2 hover:underline transition-all duration-200">
-    View All
-  </a>
-</div>
-
-
+    <div class="flex items-center justify-between mb-10 border-b border-gray-300 pb-2">
+      <div class="relative">
+        <h2 class="text-2xl sm:text-3xl font-heading text-dark">
+          <span class="text-saffron">|</span> Testimonials
+        </h2>
+        <div class="absolute left-0 -bottom-1 w-10 h-1 bg-saffron rounded"></div>
+      </div>
+      <a href="#" class="text-saffron text-sm font-medium underline-offset-2 hover:underline transition-all duration-200">
+        View All
+      </a>
+    </div>
 
     <!-- Swiper -->
     <div class="swiper testimonialSwiper px-6">
       <div class="swiper-wrapper gap-4">
 
-        <!-- Slide -->
+        <!-- Testimonial 1 -->
         <div class="swiper-slide flex justify-center">
-          <div
-            data-aos="fade-up"
-            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
-          >
-            <img
-              src="./assets/political 10.jpg"
-              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
-              alt="Venkaiah Naidu"
-            />
+          <div data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center">
+            <img src="./assets/political 10.jpg" class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2" alt="testimonial" />
             <div class="pl-20">
               <p class="text-sm font-medium mb-4">
-                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+                Rajiv ji's vision for rural development is truly transformational. His dedication has brought education and electricity to even the remotest parts.
               </p>
               <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
-                Former Vice President, Venkaiah Naidu
+                Dr. Sushma Rani, Educator, Bihar
               </p>
             </div>
           </div>
         </div>
 
-
-            <div class="swiper-slide flex justify-center">
-          <div
-            data-aos="fade-up"
-            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
-          >
-            <img
-              src="./assets/political 10.jpg"
-              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
-              alt="Venkaiah Naidu"
-            />
+        <!-- Testimonial 2 -->
+        <div class="swiper-slide flex justify-center">
+          <div data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center">
+            <img src="./assets/political 10.jpg" class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2" alt="testimonial" />
             <div class="pl-20">
               <p class="text-sm font-medium mb-4">
-                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+                His leadership is rooted in grassroots activism. Rajiv ji listens, understands, and acts — that's rare in today's politics.
               </p>
               <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
-                Former Vice President, Venkaiah Naidu
+                Anand Prakash, Social Worker
               </p>
             </div>
           </div>
         </div>
 
-
-            <div class="swiper-slide flex justify-center">
-          <div
-            data-aos="fade-up"
-            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
-          >
-            <img
-              src="./assets/political 10.jpg"
-              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
-              alt="Venkaiah Naidu"
-            />
+        <!-- Testimonial 3 -->
+        <div class="swiper-slide flex justify-center">
+          <div data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center">
+            <img src="./assets/political 10.jpg" class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2" alt="testimonial" />
             <div class="pl-20">
               <p class="text-sm font-medium mb-4">
-                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+                Rajiv Kumar Singh is the face of a new, forward-thinking leadership. Youth like me feel inspired by his digital governance initiatives.
               </p>
               <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
-                Former Vice President, Venkaiah Naidu
+                Priya Mishra, Student Leader
               </p>
             </div>
           </div>
         </div>
 
-
-
-            <div class="swiper-slide flex justify-center">
-          <div
-            data-aos="fade-up"
-            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
-          >
-            <img
-              src="./assets/political 10.jpg"
-              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
-              alt="Venkaiah Naidu"
-            />
+        <!-- Testimonial 4 -->
+        <div class="swiper-slide flex justify-center">
+          <div data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center">
+            <img src="./assets/political 10.jpg" class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2" alt="testimonial" />
             <div class="pl-20">
               <p class="text-sm font-medium mb-4">
-                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+                Working with Rajiv ji during disaster relief efforts was eye-opening — his response was immediate, humane, and effective.
               </p>
               <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
-                Former Vice President, Venkaiah Naidu
+                Nitesh Yadav, Volunteer Coordinator
               </p>
             </div>
           </div>
         </div>
 
-
-            <div class="swiper-slide flex justify-center">
-          <div
-            data-aos="fade-up"
-            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
-          >
-            <img
-              src="./assets/political 10.jpg"
-              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
-              alt="Venkaiah Naidu"
-            />
+        <!-- Testimonial 5 -->
+        <div class="swiper-slide flex justify-center">
+          <div data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center">
+            <img src="./assets/political 10.jpg" class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2" alt="testimonial" />
             <div class="pl-20">
               <p class="text-sm font-medium mb-4">
-                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
+                His work in women empowerment through training centers has changed thousands of lives — including mine.
               </p>
               <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
-                Former Vice President, Venkaiah Naidu
+                Savita Kumari, Entrepreneur, Patna
+              </p>
+            </div>
+          </div>
+        </div>
+           <!-- Testimonial 5 -->
+        <div class="swiper-slide flex justify-center">
+          <div data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center">
+            <img src="./assets/political 10.jpg" class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2" alt="testimonial" />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                His work in women empowerment through training centers has changed thousands of lives — including mine.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Savita Kumari, Entrepreneur, Patna
+              </p>
+            </div>
+          </div>
+        </div>
+           <!-- Testimonial 5 -->
+        <div class="swiper-slide flex justify-center">
+          <div data-aos="fade-up"
+            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center">
+            <img src="./assets/political 10.jpg" class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2" alt="testimonial" />
+            <div class="pl-20">
+              <p class="text-sm font-medium mb-4">
+                His work in women empowerment through training centers has changed thousands of lives — including mine.
+              </p>
+              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
+                Savita Kumari, Entrepreneur, Patna
               </p>
             </div>
           </div>
         </div>
 
-
-            <div class="swiper-slide flex justify-center">
-          <div
-            data-aos="fade-up"
-            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
-          >
-            <img
-              src="./assets/political 10.jpg"
-              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
-              alt="Venkaiah Naidu"
-            />
-            <div class="pl-20">
-              <p class="text-sm font-medium mb-4">
-                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
-              </p>
-              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
-                Former Vice President, Venkaiah Naidu
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-            <div class="swiper-slide flex justify-center">
-          <div
-            data-aos="fade-up"
-            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
-          >
-            <img
-              src="./assets/political 10.jpg"
-              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
-              alt="Venkaiah Naidu"
-            />
-            <div class="pl-20">
-              <p class="text-sm font-medium mb-4">
-                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
-              </p>
-              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
-                Former Vice President, Venkaiah Naidu
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-            <div class="swiper-slide flex justify-center">
-          <div
-            data-aos="fade-up"
-            class="group relative bg-white rounded-2xl px-6 pt-10 pb-6 shadow w-[350px] min-h-[300px] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 hover:bg-[#ffbb66] hover:text-white flex flex-col justify-center"
-          >
-            <img
-              src="./assets/political 10.jpg"
-              class="w-24 h-24 rounded-full border-4 border-saffron group-hover:border-white absolute -left-12 top-1/2 -translate-y-1/2"
-              alt="Venkaiah Naidu"
-            />
-            <div class="pl-20">
-              <p class="text-sm font-medium mb-4">
-                Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.
-              </p>
-              <p class="text-xs font-semibold opacity-70 group-hover:opacity-100">
-                Former Vice President, Venkaiah Naidu
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Duplicate the same block as above for each additional testimonial -->
-        <!-- Just replicate the div starting from .swiper-slide flex justify-center -->
+        <!-- Add more if needed -->
 
       </div>
     </div>
   </div>
 </section>
+
 
 
 <!-- Swiper JS -->
