@@ -17,6 +17,7 @@
 
 <!-- Add in <head> -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 
 
@@ -78,16 +79,11 @@
           transform: translateY(0);
         }
       }
-
-        .tab-button {
-    @apply px-4 py-2 bg-white border border-saffron text-saffron rounded-full shadow hover:bg-saffron hover:text-white transition;
-  }
-  .active-tab {
-    @apply bg-saffron text-white;
-  }
     </style>
+
 </head>
-<body>
+<body class="bg-white text-gray-900">
+
   <header class="bg-saffron text-white font-bold shadow-md fixed w-full top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
@@ -152,118 +148,107 @@
       </div>
     </div>
   </header>
+
+
+
+
+<!-- Contact Hero Section -->
+<section class="relative bg-gradient-to-br from-[#fff2cc] to-[#fceabb] text-gray-900 py-24 mt-[60px] overflow-hidden">
+  <!-- Decorative circles -->
+  <div class="absolute -top-10 -left-10 w-40 h-40 bg-white bg-opacity-30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-white bg-opacity-30 rounded-full blur-2xl"></div>
+
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <!-- Icon + Title -->
+    <div class="mb-6">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white bg-opacity-40 backdrop-blur-md mx-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 8l10 6 10-6M2 8v8l10 6 10-6V8M2 16l10 6 10-6" />
+        </svg>
+      </div>
+      <h1 class="text-5xl font-extrabold mt-4 drop-shadow-sm">Get in Touch</h1>
+    </div>
+
+    <!-- Description -->
+    <p class="text-lg md:text-xl text-gray-800/90 max-w-2xl mx-auto leading-relaxed">
+      Whether you have questions, feedback, or partnership ideas — we’d love to hear from you. Drop us a message and we’ll get back shortly.
+    </p>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section class="text-gray-800 body-font relative bg-[#fefdfb] pt-28">
+  <!-- Map Background -->
+  <div class="absolute inset-0">
+    <iframe 
+      width="100%" 
+      height="100%" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0" 
+      title="Office Location" 
+      scrolling="no" 
+      src="https://maps.google.com/maps?q=New%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+      style="filter: grayscale(1) contrast(1.2) opacity(0.4);">
+    </iframe>
+  </div>
+
+  <!-- Contact Container -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-10">
     
-    <section class="relative h-[70vh] w-full bg-center bg-cover" style="background-image: url('./assets/political\ 9.jpg');">
-  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
-    <div class="text-center px-6">
-      <h1 class="text-saffron text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wide uppercase relative inline-block">
-        <span class="bg-white/20 px-6 py-3  rounded-lg border border-white/30 backdrop-blur-md shadow-lg">
-          Gallery
-        </span>
-      </h1>
-      <p class="mt-8 text-white/80 text-base sm:text-lg tracking-wider">
-        A visual journey through our creative moments
-      </p>
+    <!-- Contact Form -->
+    <div class="bg-white rounded-lg p-8 shadow-lg border border-saffron">
+      <h2 class="text-3xl font-bold text-saffron mb-2">Get in Touch</h2>
+      <p class="leading-relaxed mb-6 text-gray-700">Send us a message and we’ll get back to you shortly.</p>
+      
+      <div class="mb-4">
+        <label for="name" class="text-sm text-gray-600">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-saffron">
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="text-sm text-gray-600">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-saffron">
+      </div>
+
+      <div class="mb-4">
+        <label for="message" class="text-sm text-gray-600">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message..." class="w-full border border-gray-300 rounded px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-saffron"></textarea>
+      </div>
+
+      <button class="bg-saffron text-white font-semibold py-2 px-6 rounded hover:bg-yellow-600 transition duration-200">
+        Send Message
+      </button>
     </div>
-  </div>
-</section>
 
+    <!-- Contact Info -->
+    <div class="bg-white rounded-lg p-8 shadow-lg border border-saffron">
+      <h2 class="text-2xl font-bold text-saffron mb-4">Contact Information</h2>
 
-
-<!-- ✅ 2. Photo Grid / Masonry Gallery Section -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4">
-   <div class="mb-12 " data-aos="fade-up">
-        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
-          <span class="text-saffron">|</span> Photo Highlights
-        </h2>
-        <div class="w-16 h-1 bg-saffron rounded "></div>
-      </div>
-    <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-    </div>
-  </div>
-</section>
-
-<!-- ✅ 3. Video Section -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
-      <div class="mb-12 " data-aos="fade-up">
-        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
-          <span class="text-saffron">|</span> Video Moments
-        </h2>
-        <div class="w-16 h-1 bg-saffron rounded "></div>
-      </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Amit Shah Speech -->
-      <div class="aspect-video">
-        <iframe
-          class="w-full h-full rounded-lg shadow-md"
-          src="https://www.youtube.com/embed/NYmFewDe6IY"
-          title="Amit Shah Speech on Operation Sindoor"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="mb-4 flex items-start gap-3">
+        <i class="fas fa-map-marker-alt text-saffron text-xl mt-1"></i>
+        <p>123 Civic Office Road, New Delhi, India</p>
       </div>
 
-      <!-- Rahul Gandhi Speech -->
-      <div class="aspect-video">
-        <iframe
-          class="w-full h-full rounded-lg shadow-md"
-          src="https://www.youtube.com/embed/ZpbzGhqBjDs"
-          title="Rahul Gandhi Speech on Operation Sindoor Debate"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ✅ 4. Event Album Tabs Section -->
-<section class="py-16 bg-gray-100">
-  <div class="max-w-6xl mx-auto px-4">
-      <div class="mb-12 " data-aos="fade-up">
-        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
-          <span class="text-saffron">|</span> Event Albums
-        </h2>
-        <div class="w-16 h-1 bg-saffron rounded "></div>
-      </div>
-    <div>
-      <div class="flex justify-center gap-4 mb-8">
-        <button class="tab-button active-tab" onclick="showAlbum('rally')">Rally</button>
-        <button class="tab-button" onclick="showAlbum('inauguration')">Inaugurations</button>
-        <button class="tab-button" onclick="showAlbum('press')">Press Meets</button>
-        <button class="tab-button" onclick="showAlbum('campaign')">Campaigns</button>
+      <div class="mb-4 flex items-start gap-3">
+        <i class="fas fa-phone text-saffron text-xl mt-1"></i>
+        <p>+91 98765 43210</p>
       </div>
 
-      <div id="rally" class="album-tab grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
+      <div class="mb-4 flex items-start gap-3">
+        <i class="fas fa-envelope text-saffron text-xl mt-1"></i>
+        <p>contact@yourdomain.com</p>
       </div>
 
-      <div id="inauguration" class="album-tab hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-      </div>
-
-      <div id="press" class="album-tab hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-      </div>
-
-      <div id="campaign" class="album-tab hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
+      <div class="mt-6">
+        <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+        <div class="flex gap-4 text-saffron text-xl">
+          <a href="#"><i class="fab fa-facebook-square hover:text-yellow-700 transition"></i></a>
+          <a href="#"><i class="fab fa-twitter-square hover:text-yellow-700 transition"></i></a>
+          <a href="#"><i class="fab fa-instagram-square hover:text-yellow-700 transition"></i></a>
+          <a href="#"><i class="fab fa-linkedin hover:text-yellow-700 transition"></i></a>
+        </div>
       </div>
     </div>
   </div>
@@ -341,6 +326,8 @@
   </div>
 </footer>
 
+
+
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -350,21 +337,33 @@
   });
 </script>
 
-<!-- ✅ JS for Tabs -->
-<script>
-  function showAlbum(tab) {
-    const tabs = document.querySelectorAll('.album-tab');
-    tabs.forEach(el => el.classList.add('hidden'));
-    document.getElementById(tab).classList.remove('hidden');
-
-    const buttons = document.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active-tab'));
-    event.target.classList.add('active-tab');
-  }
-</script>
+<!-- AOS animation JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init();
+</script>
+
+
+<!-- Swiper JS + AOS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  const testimonialSwiper = new Swiper('.testimonialSwiper', {
+    slidesPerView: 1.1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 1.2 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
 </script>
 </body>
 </html>

@@ -18,6 +18,14 @@
 <!-- Add in <head> -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<style>
+  .input-style {
+    @apply border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400;
+  }
+</style>
 
 
 <script>
@@ -152,122 +160,71 @@
       </div>
     </div>
   </header>
-    
-    <section class="relative h-[70vh] w-full bg-center bg-cover" style="background-image: url('./assets/political\ 9.jpg');">
-  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
-    <div class="text-center px-6">
-      <h1 class="text-saffron text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wide uppercase relative inline-block">
-        <span class="bg-white/20 px-6 py-3  rounded-lg border border-white/30 backdrop-blur-md shadow-lg">
-          Gallery
-        </span>
-      </h1>
-      <p class="mt-8 text-white/80 text-base sm:text-lg tracking-wider">
-        A visual journey through our creative moments
-      </p>
-    </div>
+
+<section class="bg-gradient-to-r from-saffron/80 to-orange-300/70 py-20 text-white text-center rounded-b-3xl shadow-lg mb-16 mt-14">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-5xl font-bold mb-4 tracking-tight">Join Us / Volunteer</h2>
+    <p class="text-lg leading-relaxed">Be a part of something bigger. Contribute your time, energy, and skills to support change.</p>
   </div>
 </section>
 
 
 
-<!-- ✅ 2. Photo Grid / Masonry Gallery Section -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4">
-   <div class="mb-12 " data-aos="fade-up">
-        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
-          <span class="text-saffron">|</span> Photo Highlights
-        </h2>
-        <div class="w-16 h-1 bg-saffron rounded "></div>
-      </div>
-    <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-      <img src="./assets/political 9.jpg" class="rounded-lg w-full object-cover shadow-md hover:scale-105 transition duration-300">
-    </div>
+<section class="max-w-5xl mx-auto px-6 mb-16">
+  <div class="bg-white/70 backdrop-blur-lg border border-orange-100 rounded-2xl shadow-lg p-10">
+    <h3 class="text-3xl font-semibold text-saffron mb-6">Volunteer Signup</h3>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input type="text" placeholder="Full Name" class="w-full px-4 py-3 rounded-lg border border-orange-300 bg-white/90 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-saffron">
+      <input type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-lg border border-orange-300 bg-white/90 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-saffron">
+      <input type="text" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg border border-orange-300 bg-white/90 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-saffron">
+      <select class="w-full px-4 py-3 rounded-lg border border-orange-300 bg-white/90 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-saffron">
+        <option disabled selected>Select Interest</option>
+        <option>Event Volunteer</option>
+        <option>Fundraising</option>
+        <option>Content / Media</option>
+        <option>Community Outreach</option>
+      </select>
+      <textarea placeholder="Why do you want to volunteer?" rows="4" class="w-full px-4 py-3 rounded-lg border border-orange-300 bg-white/90 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-saffron md:col-span-2"></textarea>
+      <button class="md:col-span-2 bg-saffron text-white font-bold py-3 rounded-xl hover:bg-orange-600 transition-all">Submit</button>
+    </form>
   </div>
 </section>
 
-<!-- ✅ 3. Video Section -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
-      <div class="mb-12 " data-aos="fade-up">
-        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
-          <span class="text-saffron">|</span> Video Moments
-        </h2>
-        <div class="w-16 h-1 bg-saffron rounded "></div>
-      </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Amit Shah Speech -->
-      <div class="aspect-video">
-        <iframe
-          class="w-full h-full rounded-lg shadow-md"
-          src="https://www.youtube.com/embed/NYmFewDe6IY"
-          title="Amit Shah Speech on Operation Sindoor"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
 
-      <!-- Rahul Gandhi Speech -->
-      <div class="aspect-video">
-        <iframe
-          class="w-full h-full rounded-lg shadow-md"
-          src="https://www.youtube.com/embed/ZpbzGhqBjDs"
-          title="Rahul Gandhi Speech on Operation Sindoor Debate"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
+<section class="bg-gradient-to-br from-yellow-100 via-orange-50 to-orange-100 p-10 rounded-2xl shadow-lg max-w-5xl mx-auto mb-16">
+  <div class="text-center">
+    <h3 class="text-3xl font-semibold text-saffron mb-3">Internship & Youth Wing</h3>
+    <p class="text-gray-700 max-w-2xl mx-auto mb-6">Join our youth leadership programs and internship opportunities to develop your civic engagement and professional skills.</p>
+    <a href="#join-form" class="inline-block bg-saffron text-white font-medium px-8 py-3 rounded-full hover:bg-orange-600 transition-all">Apply Now</a>
+  </div>
+</section>
+
+
+<section class="max-w-4xl mx-auto px-6 mb-16">
+  <div class="bg-white/80 border border-orange-100 backdrop-blur-lg p-8 rounded-2xl shadow-lg text-center">
+    <h3 class="text-2xl font-semibold text-saffron mb-2">Stay Informed</h3>
+    <p class="text-gray-600 mb-6">Sign up to receive updates about events, opportunities, and our latest impact stories.</p>
+    <form class="flex flex-col sm:flex-row gap-4 justify-center">
+      <input type="email" placeholder="Your Email" class="input-style w-full sm:w-auto border border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-xl px-4 py-3">
+      <button class="bg-saffron text-white px-6 py-3 rounded-xl font-medium hover:bg-orange-600 transition">Subscribe</button>
+    </form>
   </div>
 </section>
 
 
 
-<!-- ✅ 4. Event Album Tabs Section -->
-<section class="py-16 bg-gray-100">
-  <div class="max-w-6xl mx-auto px-4">
-      <div class="mb-12 " data-aos="fade-up">
-        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
-          <span class="text-saffron">|</span> Event Albums
-        </h2>
-        <div class="w-16 h-1 bg-saffron rounded "></div>
-      </div>
-    <div>
-      <div class="flex justify-center gap-4 mb-8">
-        <button class="tab-button active-tab" onclick="showAlbum('rally')">Rally</button>
-        <button class="tab-button" onclick="showAlbum('inauguration')">Inaugurations</button>
-        <button class="tab-button" onclick="showAlbum('press')">Press Meets</button>
-        <button class="tab-button" onclick="showAlbum('campaign')">Campaigns</button>
-      </div>
-
-      <div id="rally" class="album-tab grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-      </div>
-
-      <div id="inauguration" class="album-tab hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-      </div>
-
-      <div id="press" class="album-tab hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-      </div>
-
-      <div id="campaign" class="album-tab hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-        <img src="./assets/political 9.jpg" class="rounded-lg shadow hover:scale-105 transition">
-      </div>
-    </div>
+<section class="text-center mb-12">
+  <h3 class="text-2xl font-semibold text-saffron mb-4">Follow Us Online</h3>
+  <div class="flex justify-center gap-6 text-2xl">
+    <a href="#" class="text-saffron hover:text-orange-600 transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-saffron hover:text-orange-600 transition"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="text-saffron hover:text-orange-600 transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-saffron hover:text-orange-600 transition"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" class="text-saffron hover:text-orange-600 transition"><i class="fab fa-youtube"></i></a>
   </div>
 </section>
+
+
 
 <footer class="bg-[#f7f7f7] text-dark font-body">
   <div class="max-w-7xl mx-auto px-6 py-16">

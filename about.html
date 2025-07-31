@@ -2,510 +2,528 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about</title>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Link your theme -->
-    <link rel="stylesheet" href="css/theme.css" />
+  <!-- Link your theme -->
+  <link rel="stylesheet" href="css/theme.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <!-- Add in <head> -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Add in <head> -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
 
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        saffron: '#ff9933',
-                        white: '#ffffff',
-                        green: '#138808',
-                        dark: '#1b1b1b',
-                        light: '#f4f4f4',
-                        muted: '#777777',
-                    },
-                    fontFamily: {
-                        heading: ['Poppins', 'sans-serif'],
-                        body: ['Roboto', 'sans-serif'],
-                    },
-                    borderRadius: {
-                        xl: '1rem',
-                    },
-                }
-            }
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saffron: '#ff9933',
+            white: '#ffffff',
+            green: '#138808',
+            dark: '#1b1b1b',
+            light: '#f4f4f4',
+            muted: '#777777',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Roboto', 'sans-serif'],
+          },
+          borderRadius: {
+            xl: '1rem',
+          },
         }
-    </script>
+      }
+    }
+  </script>
 
-    <style>
-        :root {
-            --primary: #ff9933;
-            /* saffron */
-            --secondary: #000000;
-            /* black/dark */
-            --accent: #ffffff;
-        }
+  <style>
+    :root {
+      --primary: #ff9933;
+      /* saffron */
+      --secondary: #000000;
+      /* black/dark */
+      --accent: #ffffff;
+    }
 
-        .text-saffron {
-            color: var(--primary);
-        }
+    .text-saffron {
+      color: var(--primary);
+    }
 
-        .border-saffron {
-            border-color: var(--primary);
-        }
+    .border-saffron {
+      border-color: var(--primary);
+    }
 
-        .active-tab {
-            border-bottom: 2px solid var(--primary);
-            color: var(--primary);
-        }
+    .active-tab {
+      border-bottom: 2px solid var(--primary);
+      color: var(--primary);
+    }
 
-        .tab-content {
-            animation: fadeIn 0.5s ease-in-out;
-        }
+    .tab-content {
+      animation: fadeIn 0.5s ease-in-out;
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-@keyframes fade-in {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in {
-  animation: fade-in 1s ease-in-out forwards;
-}
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
+    .animate-fade-in {
+      animation: fade-in 1s ease-in-out forwards;
+    }
 
-    </style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </head>
 
 <body>
- <header class="bg-saffron text-white font-bold shadow-md fixed w-full top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-4">
+  <header class="bg-saffron text-white font-bold shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
 
-      <!-- Logo -->
-      <div class="flex items-center space-x-2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/BJP_Logo.svg" alt="BJP" class="h-6 w-6">
-        <span class="text-xl font-heading tracking-wider">AMIT SHAH</span>
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/BJP_Logo.svg" alt="BJP" class="h-6 w-6">
+          <span class="text-xl font-heading tracking-wider">AMIT SHAH</span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-6 text-white text-sm uppercase tracking-wide">
+          <a href="./index.html" class="hover:underline">Home</a>
+          <a href="./about.html" class="hover:underline">About</a>
+          <a href="./gallery.html" class="hover:underline">Gallery</a>
+          <a href="./press.html" class="hover:underline">Press</a>
+          <a href="./service.html" class="hover:underline">Service</a>
+          <a href="./Constituency.html" class="hover:underline">Constituency</a>
+           <a href="./join.html" class="hover:underline">Join</a>
+          <div class="flex items-center space-x-1">
+            <span>EN</span>
+            <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+        </nav>
+
+        <!-- Right Icons -->
+        <div class="flex items-center space-x-4 md:hidden">
+          <button>
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M15 17h5l-1.405-1.405M20 12h-5M20 7h-5m4.405-1.405L15 7"></path>
+            </svg>
+          </button>
+          <button id="menuToggle" class="focus:outline-none">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <!-- Desktop Menu -->
-      <nav class="hidden md:flex space-x-6 text-white text-sm uppercase tracking-wide">
-        <a href="./index.html" class="hover:underline">Home</a>
-        <a href="./about.html" class="hover:underline">About</a>
-        <a href="./gallery.html" class="hover:underline">Gallery</a>
-        <a href="./press.html" class="hover:underline">Press</a>
-        <a href="./service.html" class="hover:underline">Service</a>
-        <a href="./Constituency.html" class="hover:underline">Constituency</a>
-        <div class="flex items-center space-x-1">
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="md:hidden hidden flex-col space-y-4 pb-4 text-white">
+        <a href="./index.html" class="block text-sm">Home</a>
+        <a href="./about.html" class="block text-sm">About</a>
+        <a href="./gallery.html" class="block text-sm">Gallery</a>
+        <a href="./press.html" class="block text-sm">Press</a>
+        <a href="./service.html" class="block text-sm">Service</a>
+        <a href="./Constituency.html" class="block text-sm">Constituency</a>
+         <a href="./join.html" class="block text-sm">Join</a>
+        <div class="flex items-center space-x-2">
           <span>EN</span>
           <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z"
+              clip-rule="evenodd" />
           </svg>
         </div>
-      </nav>
-
-      <!-- Right Icons -->
-      <div class="flex items-center space-x-4 md:hidden">
-        <button>
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path d="M15 17h5l-1.405-1.405M20 12h-5M20 7h-5m4.405-1.405L15 7"></path>
-          </svg>
-        </button>
-        <button id="menuToggle" class="focus:outline-none">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
       </div>
     </div>
+  </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden flex-col space-y-4 pb-4 text-white">
-      <a href="./index.html" class="block text-sm">Home</a>
-      <a href="./about.html" class="block text-sm">About</a>
-      <a href="./gallery.html" class="block text-sm">Gallery</a>
-      <a href="./press.html" class="block text-sm">Press</a>
-      <a href="./service.html" class="block text-sm">Service</a>
-      <a href="./Constituency.html" class="block text-sm">Constituency</a>
-      <div class="flex items-center space-x-2">
-        <span>EN</span>
-        <svg class="w-3 h-3" fill="white" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.188l3.71-3.958a.75.75 0 111.08 1.04l-4.25 4.52a.75.75 0 01-1.08 0l-4.25-4.52a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-        </svg>
+
+  <section class="bg-white pt-36 pb-24 px-6 lg:px-20" id="about-hero">
+    <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-20 lg:gap-28">
+
+      <!-- Left: Text Content -->
+      <div class="lg:w-1/2 w-full relative animate-fade-in-left" data-aos="fade-right">
+        <h2 class="sm:text-5xl text-3xl font-bold font-heading text-dark leading-tight ">
+          <span class="text-saffron">|</span> About the Leader
+        </h2>
+        <div class="w-20 h-1 bg-saffron rounded mb-8"></div>
+
+        <p class="text-muted text-lg lg:text-xl leading-relaxed mb-6">
+          A visionary rooted in values and resilience. From humble beginnings, he has grown into a powerful
+          voice for the unheard — committed to building a self-reliant and empowered nation.
+        </p>
+        <p class="text-muted text-lg lg:text-xl leading-relaxed mb-6">
+          Educated at prestigious institutions and shaped by real-world experiences, his leadership bridges
+          tradition with innovation. His relentless pursuit of rural development, youth empowerment, and
+          social harmony makes him a true people's leader.
+        </p>
+        <p class="text-muted text-lg lg:text-xl leading-relaxed">
+          His journey is not just political, but personal — driven by compassion, guided by values, and
+          devoted to national unity and inclusive growth.
+        </p>
       </div>
-    </div>
-  </div>
-</header>
 
+      <!-- Right: Image with Glow Effect -->
+      <div class="lg:w-1/2 w-full flex justify-center animate-fade-in-right" data-aos="fade-left">
+        <div
+          class="relative w-96 h-96 rounded-full overflow-hidden border-4 border-saffron shadow-2xl hover:scale-105 transition-transform duration-500 group">
+          <img src="./assets/political 9.jpg" alt="Leader Portrait"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
 
-    <section class="bg-white pt-36 pb-24 px-6 lg:px-20" id="about-hero">
-        <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-20 lg:gap-28">
-
-            <!-- Left: Text Content -->
-            <div class="lg:w-1/2 w-full relative animate-fade-in-left" data-aos="fade-right">
-                <h2 class="sm:text-5xl text-3xl font-bold font-heading text-dark leading-tight mb-4">
-                    <span class="text-saffron">|</span> About the Leader
-                </h2>
-                <div class="w-20 h-1 bg-saffron rounded mb-8"></div>
-
-                <p class="text-muted text-lg lg:text-xl leading-relaxed mb-6">
-                    A visionary rooted in values and resilience. From humble beginnings, he has grown into a powerful
-                    voice for the unheard — committed to building a self-reliant and empowered nation.
-                </p>
-                <p class="text-muted text-lg lg:text-xl leading-relaxed mb-6">
-                    Educated at prestigious institutions and shaped by real-world experiences, his leadership bridges
-                    tradition with innovation. His relentless pursuit of rural development, youth empowerment, and
-                    social harmony makes him a true people's leader.
-                </p>
-                <p class="text-muted text-lg lg:text-xl leading-relaxed">
-                    His journey is not just political, but personal — driven by compassion, guided by values, and
-                    devoted to national unity and inclusive growth.
-                </p>
-            </div>
-
-            <!-- Right: Image with Glow Effect -->
-            <div class="lg:w-1/2 w-full flex justify-center animate-fade-in-right" data-aos="fade-left">
-                <div
-                    class="relative w-96 h-96 rounded-full overflow-hidden border-4 border-saffron shadow-2xl hover:scale-105 transition-transform duration-500 group">
-                    <img src="./assets/political 9.jpg" alt="Leader Portrait"
-                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
-
-                    <!-- Glow Effect -->
-                    <div
-                        class="absolute inset-0 rounded-full ring-4 ring-saffron opacity-10 group-hover:opacity-20 transition-all duration-700 animate-pulse">
-                    </div>
-                </div>
-            </div>
-
+          <!-- Glow Effect -->
+          <div
+            class="absolute inset-0 rounded-full ring-4 ring-saffron opacity-10 group-hover:opacity-20 transition-all duration-700 animate-pulse">
+          </div>
         </div>
-    </section>
+      </div>
 
-
-
-
-            <!-- Early Life & Education Section -->
-            <section class="bg-light text-dark px-6 lg:px-20 py-20" id="early-life" data-aos="fade-up">
-                <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-
-                    <!-- Left: Image with animation -->
-                    <div class="lg:w-1/2 w-full relative" data-aos="zoom-in" data-aos-delay="100">
-                        <div
-                            class="w-full max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-saffron animate-pulse-slow">
-                            <img src="./assets/political 6.webp" alt="Early Life"
-                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                        </div>
-                    </div>
-
-                    <!-- Right: Textual Content -->
-                    <div class="lg:w-1/2 w-full" data-aos="fade-left" data-aos-delay="200">
-                        <h2 class="text-3xl sm:text-4xl font-bold font-heading mb-3">
-                            <span class="text-saffron">|</span> Early Life & Education
-                        </h2>
-                        <div class="w-16 h-1 bg-saffron rounded mt-1 mb-6"></div>
-
-                        <p class="text-muted text-base lg:text-lg leading-relaxed mb-4">
-                            Growing up in a small rural town, the leader's childhood was shaped by modest means and
-                            strong values.
-                            From an early age, he showed a keen interest in learning, often walking miles to attend
-                            school—
-                            a testament to his determination and hunger for knowledge.
-                        </p>
-
-                        <p class="text-muted text-base lg:text-lg leading-relaxed mb-4">
-                            His parents, despite limited resources, ensured that education remained a top priority.
-                            This strong foundation of ethics, discipline, and empathy would later define his leadership
-                            style.
-                        </p>
-
-                        <p class="text-muted text-base lg:text-lg leading-relaxed">
-                            He later pursued higher studies in Political Science at a prestigious university, where he
-                            not only
-                            excelled academically but also became an influential voice among student leaders—
-                            advocating for social justice and youth empowerment.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-<section class="bg-light text-dark px-6 lg:px-20 py-24" id="journey" x-data="journeyTimeline()">
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Section Heading -->
-    <div class="mb-12 text-center" data-aos="fade-up">
-      <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
-        <span class="text-saffron">|</span> Journey
-      </h2>
-      <div class="w-16 h-1 bg-saffron rounded mx-auto mt-1"></div>
     </div>
+  </section>
 
-    <!-- Years Timeline Navigation -->
- <!-- Timeline Tabs (Heading Style, Not Rounded, Not Button-like) -->
-<div class="flex justify-center items-center gap-6 mb-10 overflow-x-auto scrollbar-hide px-2 sm:px-0">
-  <template x-for="(item, index) in timeline" :key="index">
-    <div
-      @click="active = index"
-      class="cursor-pointer text-base sm:text-lg font-semibold border-b-2 pb-1 transition-all duration-300"
-      :class="active === index 
+
+
+
+  <!-- Early Life & Education Section -->
+  <section class="bg-light text-dark px-6 lg:px-20 py-20" id="early-life" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+
+      <!-- Left: Image with animation -->
+      <div class="lg:w-1/2 w-full relative" data-aos="zoom-in" data-aos-delay="100">
+        <div
+          class="w-full max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-saffron animate-pulse-slow">
+          <img src="./assets/political 6.webp" alt="Early Life"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+        </div>
+      </div>
+
+      <!-- Right: Textual Content -->
+      <div class="lg:w-1/2 w-full" data-aos="fade-left" data-aos-delay="200">
+        <h2 class="text-3xl sm:text-4xl font-bold font-heading ">
+          <span class="text-saffron">|</span> Early Life & Education
+        </h2>
+        <div class="w-16 h-1 bg-saffron rounded mt-1 mb-6"></div>
+
+        <p class="text-muted text-base lg:text-lg leading-relaxed mb-4">
+          Growing up in a small rural town, the leader's childhood was shaped by modest means and
+          strong values.
+          From an early age, he showed a keen interest in learning, often walking miles to attend
+          school—
+          a testament to his determination and hunger for knowledge.
+        </p>
+
+        <p class="text-muted text-base lg:text-lg leading-relaxed mb-4">
+          His parents, despite limited resources, ensured that education remained a top priority.
+          This strong foundation of ethics, discipline, and empathy would later define his leadership
+          style.
+        </p>
+
+        <p class="text-muted text-base lg:text-lg leading-relaxed">
+          He later pursued higher studies in Political Science at a prestigious university, where he
+          not only
+          excelled academically but also became an influential voice among student leaders—
+          advocating for social justice and youth empowerment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-light text-dark px-6 lg:px-20 py-24" id="journey" x-data="journeyTimeline()">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Section Heading -->
+      <div class="mb-12 " data-aos="fade-up">
+        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
+          <span class="text-saffron">|</span> Journey
+        </h2>
+        <div class="w-16 h-1 bg-saffron rounded "></div>
+      </div>
+
+      <!-- Years Timeline Navigation -->
+      <!-- Timeline Tabs (Heading Style, Not Rounded, Not Button-like) -->
+      <div class="flex   gap-6 mb-10 overflow-x-auto scrollbar-hide px-2 sm:px-0">
+        <template x-for="(item, index) in timeline" :key="index">
+          <div @click="active = index"
+            class="cursor-pointer text-base sm:text-lg font-semibold border-b-2 pb-1 transition-all duration-300"
+            :class="active === index 
         ? 'text-saffron border-saffron scale-105' 
         : 'text-gray-500 border-transparent hover:text-saffron hover:border-saffron'">
-      <span x-text="item.year"></span>
+            <span x-text="item.year"></span>
+          </div>
+        </template>
+      </div>
+
+
+      <!-- Timeline Cards -->
+      <div class="relative w-full">
+        <template x-for="(item, index) in timeline" :key="index">
+          <div x-show="active === index" x-transition:enter="transition ease-out duration-500"
+            x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-4"
+            class="bg-white shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row gap-0 md:gap-6 min-h-[400px] md:min-h-[350px]">
+
+            <!-- Image -->
+            <div class="md:w-1/2 w-full h-full relative">
+              <img :src="item.image" alt="Journey Image" class="h-full w-full object-cover" />
+
+              <!-- Year Badge on Top Left -->
+              <div class="absolute top-4 left-4 bg-saffron text-white text-sm font-bold px-4 py-1 shadow-md">
+                <span x-text="item.year"></span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="md:w-1/2 w-full p-6 flex flex-col justify-between h-full">
+              <div>
+                <h3 class="text-xl font-bold text-saffron mb-2" x-text="item.title"></h3>
+                <p class="text-muted text-sm leading-relaxed" x-text="item.description"></p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
     </div>
-  </template>
-</div>
+  </section>
 
 
-    <!-- Timeline Cards -->
-    <div class="relative w-full">
-      <template x-for="(item, index) in timeline" :key="index">
+
+  <!-- Vision & Core Values Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Heading -->
+         <div class="mb-12 " data-aos="fade-up">
+        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
+          <span class="text-saffron">|</span> Vision & Core Values
+        </h2>
+        <div class="w-16 h-1 bg-saffron rounded "></div>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <!-- Card 1 -->
         <div
-          x-show="active === index"
-          x-transition:enter="transition ease-out duration-500"
-          x-transition:enter-start="opacity-0 translate-y-4"
-          x-transition:enter-end="opacity-100 translate-y-0"
-          x-transition:leave="transition ease-in duration-300"
-          x-transition:leave-start="opacity-100 translate-y-0"
-          x-transition:leave-end="opacity-0 translate-y-4"
-          class="bg-white shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row gap-0 md:gap-6 min-h-[400px] md:min-h-[350px]">
-          
-          <!-- Image -->
-          <div class="md:w-1/2 w-full h-full relative">
-            <img :src="item.image" alt="Journey Image" class="h-full w-full object-cover" />
-            
-            <!-- Year Badge on Top Left -->
-            <div class="absolute top-4 left-4 bg-saffron text-white text-sm font-bold px-4 py-1 shadow-md">
-              <span x-text="item.year"></span>
-            </div>
-          </div>
-
-          <!-- Content -->
-          <div class="md:w-1/2 w-full p-6 flex flex-col justify-between h-full">
-            <div>
-              <h3 class="text-xl font-bold text-saffron mb-2" x-text="item.title"></h3>
-              <p class="text-muted text-sm leading-relaxed" x-text="item.description"></p>
-            </div>
-          </div>
+          class="group bg-gradient-to-br from-[#fffdf5] to-[#fffcee] border border-saffron/30 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-saffron text-3xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">
+            Integrity</div>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Upholding transparency, accountability, and ethical governance in all actions.
+          </p>
         </div>
-      </template>
+
+        <!-- Card 2 -->
+        <div
+          class="group bg-gradient-to-br from-[#fffdf5] to-[#fffcee] border border-saffron/30 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-saffron text-3xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">
+            Development</div>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Focusing on sustainable progress in education, infrastructure, and healthcare.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="group bg-gradient-to-br from-[#fffdf5] to-[#fffcee] border border-saffron/30 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-saffron text-3xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">
+            Inclusion</div>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Empowering every citizen irrespective of caste, gender, or socio-economic background.
+          </p>
+        </div>
+
+      </div>
     </div>
-
-  </div>
-</section>
-
-
-
-           <!-- Vision & Core Values Section -->
-<section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Heading -->
-    <h2 class="text-3xl sm:text-4xl font-extrabold font-heading mb-16 flex items-center gap-3 text-gray-800">
-      <span class="text-saffron text-4xl">|</span> Vision & Core Values
-    </h2>
-
-    <!-- Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      
-      <!-- Card 1 -->
-      <div class="group bg-gradient-to-br from-[#fffdf5] to-[#fffcee] border border-saffron/30 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-        <div class="text-saffron text-3xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">Integrity</div>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Upholding transparency, accountability, and ethical governance in all actions.
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="group bg-gradient-to-br from-[#fffdf5] to-[#fffcee] border border-saffron/30 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-        <div class="text-saffron text-3xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">Development</div>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Focusing on sustainable progress in education, infrastructure, and healthcare.
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="group bg-gradient-to-br from-[#fffdf5] to-[#fffcee] border border-saffron/30 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-        <div class="text-saffron text-3xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">Inclusion</div>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Empowering every citizen irrespective of caste, gender, or socio-economic background.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
   <!-- Images of Public Appearances Section -->
-<section class="py-16 bg-light">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl sm:text-4xl font-bold font-heading mb-12 flex items-center gap-3">
-      <span class="text-saffron text-4xl">|</span> Images of Public Appearances
-    </h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-        <img src="/assets/public1.jpg" alt="Public Appearance 1" class="object-cover w-full h-64">
-      </div>
-      <div class="overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-        <img src="/assets/public2.jpg" alt="Public Appearance 2" class="object-cover w-full h-64">
-      </div>
-      <div class="overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-        <img src="/assets/public3.jpg" alt="Public Appearance 3" class="object-cover w-full h-64">
-      </div>
-    </div>
-  </div>
-</section>
-    
-<footer class="bg-[#f7f7f7] text-dark font-body">
-  <div class="max-w-7xl mx-auto px-6 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-      
-      <!-- Section 1 -->
-      <div>
-        <h2 class="text-lg font-semibold text-saffron mb-4">ABOUT</h2>
-        <p class="text-sm leading-6">
-          We are committed to showcasing the journey, vision, and values of Shri Amit Shah Ji through an engaging and informative platform.
-        </p>
+  <section class="py-16 bg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 " data-aos="fade-up">
+        <h2 class="sm:text-4xl text-3xl font-heading font-bold text-dark">
+          <span class="text-saffron">|</span> Images of Public Appearances
+        </h2>
+        <div class="w-16 h-1 bg-saffron rounded "></div>
       </div>
 
-      <!-- Section 2 -->
-      <div>
-        <h2 class="text-lg font-semibold text-saffron mb-4">QUICK LINKS</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-saffron transition">Home</a></li>
-          <li><a href="#" class="hover:text-saffron transition">About</a></li>
-          <li><a href="#" class="hover:text-saffron transition">Achievements</a></li>
-          <li><a href="#" class="hover:text-saffron transition">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Section 3 -->
-      <div>
-        <h2 class="text-lg font-semibold text-saffron mb-4">RESOURCES</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-saffron transition">Media</a></li>
-          <li><a href="#" class="hover:text-saffron transition">Speeches</a></li>
-          <li><a href="#" class="hover:text-saffron transition">Blog</a></li>
-          <li><a href="#" class="hover:text-saffron transition">Gallery</a></li>
-        </ul>
-      </div>
-
-      <!-- Section 4 -->
-      <div>
-        <h2 class="text-lg font-semibold text-saffron mb-4">SUBSCRIBE</h2>
-        <form class="flex flex-col space-y-3">
-          <input type="email" placeholder="Your email"
-            class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-saffron" />
-          <button
-            class="bg-saffron text-white py-2 rounded-md hover:bg-opacity-90 transition-all">Subscribe</button>
-        </form>
-        <p class="text-xs mt-4 text-gray-600">Stay informed with the latest updates and speeches.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="/assets/public1.jpg" alt="Public Appearance 1" class="object-cover w-full h-64">
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="/assets/public2.jpg" alt="Public Appearance 2" class="object-cover w-full h-64">
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="/assets/public3.jpg" alt="Public Appearance 3" class="object-cover w-full h-64">
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Bottom -->
-  <div class="bg-saffron text-white text-sm py-4">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
-      <p>&copy; 2025 AmitShahJourney. All rights reserved.</p>
-      <div class="flex space-x-4 mt-2 sm:mt-0">
-        <a href="#" class="hover:opacity-80 transition">
-          <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
-            <path
-              d="M22.23 5.924c-.793.352-1.644.59-2.538.698a4.48 4.48 0 001.964-2.475 8.948 8.948 0 01-2.828 1.084 4.466 4.466 0 00-7.603 4.072A12.676 12.676 0 013.149 4.14a4.465 4.465 0 001.38 5.961 4.429 4.429 0 01-2.024-.559v.057a4.464 4.464 0 003.582 4.374 4.48 4.48 0 01-2.02.077 4.465 4.465 0 004.17 3.1 8.97 8.97 0 01-5.56 1.916c-.36 0-.716-.021-1.067-.063a12.657 12.657 0 006.84 2.004c8.207 0 12.698-6.8 12.698-12.697 0-.194-.004-.387-.013-.579a9.077 9.077 0 002.23-2.312z">
-            </path>
-          </svg>
-        </a>
-        <a href="#" class="hover:opacity-80 transition">
-          <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
-            <path
-              d="M19.615 3H4.385C3.615 3 3 3.615 3 4.385v15.23C3 20.385 3.615 21 4.385 21h8.19v-6.692H10.08v-2.615h2.495V9.655c0-2.471 1.51-3.815 3.717-3.815 1.06 0 1.972.079 2.237.114v2.59h-1.534c-1.2 0-1.433.571-1.433 1.407v1.845h2.86l-.373 2.615h-2.487V21h4.873c.77 0 1.385-.615 1.385-1.385V4.385C21 3.615 20.385 3 19.615 3z">
-            </path>
-          </svg>
-        </a>
+  <footer class="bg-[#f7f7f7] text-dark font-body">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <!-- Section 1 -->
+        <div>
+          <h2 class="text-lg font-semibold text-saffron mb-4">ABOUT</h2>
+          <p class="text-sm leading-6">
+            We are committed to showcasing the journey, vision, and values of Shri Amit Shah Ji through an engaging and
+            informative platform.
+          </p>
+        </div>
+
+        <!-- Section 2 -->
+        <div>
+          <h2 class="text-lg font-semibold text-saffron mb-4">QUICK LINKS</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-saffron transition">Home</a></li>
+            <li><a href="#" class="hover:text-saffron transition">About</a></li>
+            <li><a href="#" class="hover:text-saffron transition">Achievements</a></li>
+            <li><a href="#" class="hover:text-saffron transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 3 -->
+        <div>
+          <h2 class="text-lg font-semibold text-saffron mb-4">RESOURCES</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-saffron transition">Media</a></li>
+            <li><a href="#" class="hover:text-saffron transition">Speeches</a></li>
+            <li><a href="#" class="hover:text-saffron transition">Blog</a></li>
+            <li><a href="#" class="hover:text-saffron transition">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Section 4 -->
+        <div>
+          <h2 class="text-lg font-semibold text-saffron mb-4">SUBSCRIBE</h2>
+          <form class="flex flex-col space-y-3">
+            <input type="email" placeholder="Your email"
+              class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-saffron" />
+            <button class="bg-saffron text-white py-2 rounded-md hover:bg-opacity-90 transition-all">Subscribe</button>
+          </form>
+          <p class="text-xs mt-4 text-gray-600">Stay informed with the latest updates and speeches.</p>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+
+    <!-- Bottom -->
+    <div class="bg-saffron text-white text-sm py-4">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
+        <p>&copy; 2025 AmitShahJourney. All rights reserved.</p>
+        <div class="flex space-x-4 mt-2 sm:mt-0">
+          <a href="#" class="hover:opacity-80 transition">
+            <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+              <path
+                d="M22.23 5.924c-.793.352-1.644.59-2.538.698a4.48 4.48 0 001.964-2.475 8.948 8.948 0 01-2.828 1.084 4.466 4.466 0 00-7.603 4.072A12.676 12.676 0 013.149 4.14a4.465 4.465 0 001.38 5.961 4.429 4.429 0 01-2.024-.559v.057a4.464 4.464 0 003.582 4.374 4.48 4.48 0 01-2.02.077 4.465 4.465 0 004.17 3.1 8.97 8.97 0 01-5.56 1.916c-.36 0-.716-.021-1.067-.063a12.657 12.657 0 006.84 2.004c8.207 0 12.698-6.8 12.698-12.697 0-.194-.004-.387-.013-.579a9.077 9.077 0 002.23-2.312z">
+              </path>
+            </svg>
+          </a>
+          <a href="#" class="hover:opacity-80 transition">
+            <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+              <path
+                d="M19.615 3H4.385C3.615 3 3 3.615 3 4.385v15.23C3 20.385 3.615 21 4.385 21h8.19v-6.692H10.08v-2.615h2.495V9.655c0-2.471 1.51-3.815 3.717-3.815 1.06 0 1.972.079 2.237.114v2.59h-1.534c-1.2 0-1.433.571-1.433 1.407v1.845h2.86l-.373 2.615h-2.487V21h4.873c.77 0 1.385-.615 1.385-1.385V4.385C21 3.615 20.385 3 19.615 3z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
 
 
-      function journeyTimeline() {
-    return {
-      active: 0,
-      timeline: [
-        {
-          year: "1964",
-          title: "Birth In Mumbai",
-          description: "Born to Gujarati parents in Mumbai on October 22, 1964. His early upbringing instilled a deep sense of community, resilience, and purpose.",
-          image: "./assets/political 7.jpg"
-        },
-        {
-          year: "1980",
-          title: "Education Begins",
-          description: "He enrolled in political science and actively participated in youth organizations. His leadership qualities emerged early during these formative years.",
-          image: "./assets/political 9.jpg"
-        },
-        {
-          year: "1985",
-          title: "Student Leadership",
-          description: "His influence grew as he led major student unions and campaigned for reforms, earning recognition as a grassroots leader.",
-          image: "./assets/political 8.jpg"
-        },
-        {
-          year: "1990",
-          title: "Entry into Politics",
-          description: "He officially joined national politics, aligning with movements that focused on rural development and inclusive policies.",
-          image: "./assets/political 7.jpg"
-        },
-        // Add more entries here...
-      ]
+    function journeyTimeline() {
+      return {
+        active: 0,
+        timeline: [
+          {
+            year: "1964",
+            title: "Birth In Mumbai",
+            description: "Born to Gujarati parents in Mumbai on October 22, 1964. His early upbringing instilled a deep sense of community, resilience, and purpose.",
+            image: "./assets/political 7.jpg"
+          },
+          {
+            year: "1980",
+            title: "Education Begins",
+            description: "He enrolled in political science and actively participated in youth organizations. His leadership qualities emerged early during these formative years.",
+            image: "./assets/political 9.jpg"
+          },
+          {
+            year: "1985",
+            title: "Student Leadership",
+            description: "His influence grew as he led major student unions and campaigned for reforms, earning recognition as a grassroots leader.",
+            image: "./assets/political 8.jpg"
+          },
+          {
+            year: "1990",
+            title: "Entry into Politics",
+            description: "He officially joined national politics, aligning with movements that focused on rural development and inclusive policies.",
+            image: "./assets/political 7.jpg"
+          },
+          // Add more entries here...
+        ]
+      }
     }
-  }
-    </script>
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-    <!-- AOS animation JS -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+  <!-- AOS animation JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 
